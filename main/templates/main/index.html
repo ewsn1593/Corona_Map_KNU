@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KNU_Corona_Map</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main/index.css' %}">
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ihkf4v4auk"></script>
+</head>
+<body>
+<div id="nav">
+    <span id="knu_map">경북대 코로나 맵</span>
+    <span id="menu">
+        <div class="m">확진자 현황</div>
+        <div class="m">학교 공지사항</div>
+        <div class="m">총학생회 공지사항</div>
+    </span>
+</div>
+<div id="map"></div>
+<div id="test"></div>
+<script>
+   var buil_list = "{{buil_list}}";
+</script>
+<script src="{% static 'main/index.js' %}"></script>
+</body>
+</html>
