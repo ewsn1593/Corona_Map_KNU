@@ -75,6 +75,9 @@ for(var i=0; i<buildings.length; i++){
         naver.maps.Event.addListener(marker, 'mouseover', function(){
             infowindow.open(map, marker);
         });
+        naver.maps.Event.addListener(marker, 'click', function(){
+            infowindow.open(map, marker);
+        });
         naver.maps.Event.addListener(marker, 'mouseout', function(){
             infowindow.close()
         });
