@@ -16,9 +16,11 @@ class Building(models.Model):
         return self.name
 
 class School_Find(models.Model):
-    Faculty = models.IntegerField(blank = False)
+    schoolteacher = models.IntegerField(blank = False)
     postg = models.IntegerField(blank = False)
     underg = models.IntegerField(blank = False)
+    employee = models.IntegerField(blank = False)
+    date = models.DateField(blank=False)
 
 class Info(models.Model):
     text = models.TextField(blank=True)

@@ -8,8 +8,8 @@ class Building_Admin(admin.ModelAdmin):
     list_editable = ['confirm', 'suspicious', 'protection', 'status', 'text']
 
 class School_Find_Admin(admin.ModelAdmin):
-    list_display = ['Faculty', 'postg', 'underg']
-    list_editable = ['postg','underg']
+    list_display = ['schoolteacher','employee', 'postg', 'underg','date']
+    list_editable = ['postg','underg','employee','date']
 
 class Info_Admin(models.Model):
     list_display = ['text']

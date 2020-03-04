@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>KNU_Corona_Map</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'main/index.css' %}">
@@ -13,14 +16,41 @@
 <div id="nav">
     <span id="knu_map">경북대 코로나 맵</span>
     <span id="menu">
-        <div class="m">확진자 현황</div>
-        <div class="m">학교 공지사항</div>
-        <div class="m">총학생회 공지사항</div>
+        <div id="umenu">
+            <div class="m" id="m1"><a href="http://www.daegu.go.kr/health/index.do?menu_id=00936503">대구 확진자 현황</a></div>
+            <div class="m" id="m2"><a href="http://knu.ac.kr/wbbs/wbbs/bbs/btin/list.action?bbs_cde=34&menu_idx=224">학교 공지사항</a></div>
+            <div class="m" id="m3"><a href="https://www.instagram.com/knu_ch/?igshid=rncxyduaxum5">총학생회 공지사항</a></div>
+        </div>
+    </span>
+    <span id="menu_m">
+        <i id="icon" class="fa fa-bars fa-4x"></i>
+        <div id="umenum">
+            <div class="m" id="m2m"><a href="http://knu.ac.kr/wbbs/wbbs/bbs/btin/list.action?bbs_cde=34&menu_idx=224">학교 공지사항</a></div>
+            <div class="m" id="m3m"><a href="https://www.instagram.com/knu_ch/?igshid=rncxyduaxum5">총학생회 공지사항</a></div>
+            <div class="m" id="m1m"><a href="http://www.daegu.go.kr/health/index.do?menu_id=00936503">대구 확진자 현황</a></div>
+        </div>
     </span>
 </div>
+<div id="bullet_info">
+    <h3><img src="{% static 'main/bell.png' %}" alt="">알림</h3>
+    {% for item in info %}
+        <p>▶ {{item.text}}</p>
+    {% endfor %}
+</div>
+    <div id="info">
+        <h3>경북대 확진자 수</h3>
+        <h4> 총 <span>{{all}}</span> 명</h4>
+        <p>교원: <span> {{st}} </span>명</p>
+        <p>직원: <span> {{employee}} </span>명</p>
+        <p>학부생: <span> {{underg}} </span>명</p>
+        <p>대학원생: <span> {{postg}} </span>명</p>
+    </div>
+    <div id="date"><span>{{date}} 정보 기반</span></div>
+
 <div id="map"></div>
-<div id="test"></div>
+
 <script>
+   var marker_img = "{% static 'main/marker.png' %}"
    var buil_list = "{{buil_list}}";
 </script>
 <script src="{% static 'main/index.js' %}"></script>
