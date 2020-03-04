@@ -2,7 +2,7 @@ var knu_coord = new naver.maps.LatLngBounds(
     new naver.maps.LatLng(35.884375, 128.603367),
     new naver.maps.LatLng(35.896619, 128.616585),
 )
-var infos = document.querySelectorAll('#bullet_info > p')
+var infos = document.querySelectorAll('#bullet_info > p');
 var button = document.querySelector('#bullet_info > h3');
 var menu = document.querySelector('#icon');
 var umenu = document.querySelector('#umenum');
@@ -31,29 +31,29 @@ button.onclick = function(){
             infos[i].style.display = 'none';
         }
     }
-    if(current_c == 'green'){
-        button.style.color = 'red';
-        current_c = 'red';
-    }
-    else{
-        button.style.color = 'green';
-        current_c = 'green';
-    }
-
     show = ~show;
-}
+};
 
+button.ontouchstart = function(){
+    button.style.color = 'red';
+    current_c = 'green';
+};
+
+button.ontouchend = function(){
+    button.style.color = 'green';
+    current_C = 'green'
+};
 
 button.onmouseover = function(){
     button.style.color = 'red';
     current_c = 'red';
-}
+};
 button.onmouseout = function(){
     button.style.color = 'green';
     current_c = 'green';
-}
+};
 var map = new naver.maps.Map('map');
-map.fitBounds(knu_coord)
+map.fitBounds(knu_coord);
 buildings = buil_list.replace(/&#39;/g, "\"");
 buildings = buildings.replace(/False/g, "false");
 buildings = buildings.replace(/True/g, "true");
