@@ -50,7 +50,7 @@ button.onmouseover = function(){
 }
 button.onmouseout = function(){
     button.style.color = 'green';
-    current_c = 'red';
+    current_c = 'green';
 }
 var map = new naver.maps.Map('map');
 map.fitBounds(knu_coord)
