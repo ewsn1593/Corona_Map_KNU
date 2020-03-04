@@ -31,7 +31,7 @@ button.onclick = function(){
             infos[i].style.display = 'none';
         }
     }
-    if(current_c == 'grren'){
+    if(current_c == 'green'){
         button.style.color = 'red';
         current_c = 'red';
     }
