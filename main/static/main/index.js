@@ -18,7 +18,7 @@ icon.onclick = function(){
     }
     menu_fold = ~menu_fold;
 };
-
+var current_c = 'green';
 var show = false;
 button.onclick = function(){
     if(show == false){
@@ -26,18 +26,31 @@ button.onclick = function(){
             infos[i].style.display = 'block';
         }
      }
-     else{
+    else{
         for(var i=0; i<infos.length; i++){
             infos[i].style.display = 'none';
         }
-     }
-     show = ~show;
+    }
+    if(current_c == 'grren'){
+        button.style.color = 'red';
+        current_c = 'red';
+    }
+    else{
+        button.style.color = 'green';
+        current_c = 'green';
+    }
+
+    show = ~show;
 }
+
+
 button.onmouseover = function(){
     button.style.color = 'red';
+    current_c = 'red';
 }
 button.onmouseout = function(){
     button.style.color = 'green';
+    current_c = 'red';
 }
 var map = new naver.maps.Map('map');
 map.fitBounds(knu_coord)
