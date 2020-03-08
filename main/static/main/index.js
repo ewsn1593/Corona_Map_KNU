@@ -57,6 +57,7 @@ map.fitBounds(knu_coord);
 buildings = buil_list.replace(/&#39;/g, "\"");
 buildings = buildings.replace(/False/g, "false");
 buildings = buildings.replace(/True/g, "true");
+
 var buildings = JSON.parse(buildings);//비로소 building이 배열
 var infowindows = new Array();
 var markers = new Array();
