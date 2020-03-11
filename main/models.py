@@ -35,3 +35,9 @@ class QuarantinePPl(models.Model):
     inPpl = models.IntegerField(blank = False)
     outPpl = models.IntegerField(blank = False)
     toHos = models.IntegerField(blank= False)
+
+class Pbuil(models.Model):
+    name = models.CharField(max_length=20)
+    date = models.CharField(max_length = 20)
+    longitude = models.FloatField(blank=False)
+    latitude = models.FloatField(blank=False)

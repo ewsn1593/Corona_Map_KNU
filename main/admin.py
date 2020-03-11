@@ -22,9 +22,12 @@ class QuarantinePPl_Admin(admin.ModelAdmin):
     list_display = ['date', 'num', 'inPpl', 'outPpl','toHos']
     list_editable = ['num', 'inPpl', 'outPpl','toHos']
 
-
+class pbuil_Admin(admin.ModelAdmin):
+    list_display = ['name','date','longitude','latitude']
+    list_editable = ['date', 'longitude', 'latitude']
 admin.site.register(Building, Building_Admin)
 admin.site.register(School_Find, School_Find_Admin)
 admin.site.register(Info)
 admin.site.register(Chinese_student)
 admin.site.register(QuarantinePPl,QuarantinePPl_Admin)
+admin.site.register(Pbuil, pbuil_Admin)

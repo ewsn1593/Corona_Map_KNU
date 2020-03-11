@@ -11,7 +11,14 @@ def index(request):
   for building in buildings:
     buil_dict = model_to_dict(building)
     buil_list.append(buil_dict)
+
   patient_num = School_Find.objects.last()
+
+  pbuils = Pbuil.objects.all()
+  pbuil_list = []
+  for pbuil in pbuils:
+    pbuil_dict = model_to_dict(pbuil)
+    pbuil_list.append(pbuil_dict)
 
   quaranInfo = QuarantinePPl.objects.last()
   qin = quaranInfo.inPpl
@@ -29,5 +36,5 @@ def index(request):
   info = Info.objects.all()
   return render(request, 'main/index.html', {'buil_list':buil_list, 'employee':employee, 'st':st, 'underg':underg,
                                               'postg':postg, 'all':all, 'date':date, 'info':info, 'qin':qin, 'qout':qout,
-                                              'qnum':qnum,'qchange':qchange, 'qtoHos':qtoHos,
+                                              'qnum':qnum,'qchange':qchange, 'qtoHos':qtoHos, 'pbuil_list':pbuil_list,
                                              })

@@ -58,6 +58,10 @@ buildings = buil_list.replace(/&#39;/g, "\"");
 buildings = buildings.replace(/False/g, "false");
 buildings = buildings.replace(/True/g, "true");
 
+
+pbuils = pbuil_list.replace(/&#39;/g, "\"");
+
+
 /* for quarantine */
 var quarantine = new naver.maps.Polygon({
     map: map,
@@ -146,7 +150,46 @@ naver.maps.Event.addListener(qmarker, 'mouseout', function(){
 });
 
 
+var pbuils = JSON.parse(pbuils);
+var pbuil_info = new Array();
+var pbuil_markers = new Array();
+for(var i=0; i<pbuils.length; i++){
+    (function(m){
+        var position = new naver.maps.LatLng(pbuils[m].longitude, pbuils[m].latitude);
+        var marker = new naver.maps.Marker({
+            map: map,
+            position: position,
+            icon: {
+                path: naver.maps.SymbolPath.CIRCLE,
+                center: position,
+                radius: 8,
+                anchor: naver.maps.Position.CENTER,
+                fillColor:'yellowgreen',
+                fillOpacity:1,
+                strokeOpacity: 1,
+                strokeWeight:1,
+            }
+        });
+        var contentString = [
+            `<h2>${pbuils[i].name}</h2>`,
+            `    <p>${pbuils[i].date} 방역</p>`,
+        ].join('');
 
+        var info = new naver.maps.InfoWindow({
+            content: contentString,
+        });
+
+        naver.maps.Event.addListener(marker, 'mouseover', function(){
+            info.open(map, marker);
+        })
+        naver.maps.Event.addListener(marker, 'click', function(){
+            info.open(map, marker);
+        });
+        naver.maps.Event.addListener(marker, 'mouseout', function(){
+            info.close()
+        });
+    })(i);
+}
 
 /*=========================================================================*/
 
