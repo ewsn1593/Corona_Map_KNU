@@ -29,3 +29,9 @@ class Chinese_student(models.Model):
     date = models.DateField(blank = False)
     num = models.IntegerField(blank = False)
 
+class QuarantinePPl(models.Model):
+    date = models.DateField(blank = False)
+    num = models.IntegerField(blank = False)
+    inPpl = models.IntegerField(blank = False)
+    outPpl = models.IntegerField(blank = False)
+    toHos = models.IntegerField(blank= False)

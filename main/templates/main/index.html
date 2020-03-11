@@ -38,7 +38,7 @@
     {% endfor %}
 </div>
     <div id="info">
-        <h3>경북대 확진자 수</h3>
+        <h3>경북대 소속 확진자</h3>
         <h4> 총 <span>{{all}}</span> 명</h4>
         <p>교원: <span> {{st}} </span>명</p>
         <p>직원: <span> {{employee}} </span>명</p>
@@ -52,6 +52,12 @@
 <script>
    var marker_img = "{% static 'main/marker.png' %}"
    var buil_list = "{{buil_list}}";
+   var qin = "{{qin}}";
+   var qout = "{{qout}}";
+   var qnum = "{{qnum}}";
+   var qtoHos = "{{qtoHos}}";
+   var qchange = "{{qchange}}";
+
 </script>
 <script src="{% static 'main/index.js' %}"></script>
 </body>
