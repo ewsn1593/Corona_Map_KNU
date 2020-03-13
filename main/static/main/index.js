@@ -1,7 +1,7 @@
 var knu_coord = new naver.maps.LatLngBounds(
     new naver.maps.LatLng(35.884375, 128.603367),
     new naver.maps.LatLng(35.896619, 128.616585),
-)
+);
 var infos = document.querySelectorAll('#bullet_info > p');
 var button = document.querySelector('#bullet_info > h3');
 var menu = document.querySelector('#icon');
