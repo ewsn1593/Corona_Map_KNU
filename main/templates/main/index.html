@@ -7,7 +7,19 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Naver, Google 검색 등록 -->
+    <meta name="naver-site-verification" content="37fe145934cd1eba12f527d10d42a27371f8eef7"/>
+    <meta name="google-site-verification" content="XnV2dWO8wAo2Uf8CedbWxTn2iKa4gbaZ603R6VCKlm4" />
     <title>KNU_Corona_Map</title>
+
+    <meta property="og:url" content="http://knucoronamap.kro.kr/" />
+    <meta property="og:title" content="KNU_Corona_Map" />
+    <meta property="og:type" content="website" />
+    <!--<meta property="og:image" content="이미지 url 추가 필요" />-->
+    <meta property="og:description" content="해달 제작 경북대학교 코로나 맵">
+    <meta name="description" content="해달 제작 경북대학교 코로나 맵">
+    <meta name="keywords" content="경북대학교, 코로나 맵, 경북대 코로나 맵, 해달">
+
     {% load static %}
     <link rel="stylesheet" href="{% static 'main/index.css' %}">
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ihkf4v4auk"></script>
@@ -48,6 +60,19 @@
     <div id="date"><span>{{date}} 정보 기반</span></div>
 
 <div id="map"></div>
+
+<!-- footer -->
+<div id="footer">
+    <div id="wrapper">
+        <span>메일주소무단수집거부</span><br>
+
+        <span>대구광역시 북구 산격3동(대학로80) 경북대학교 IT-1호관 108호</span><br>
+        <span>Email : seongr39@knu.ac.kr</span><br>
+
+        <span>copyright © 경북대학교 IT대학 학술동아리 해달, All Rights Reserved</span><br>
+        <span>기획 : 트랙조직위원장 김성록 | 개발 : 교육운영진장 신준철, 회장 최강민</span>
+    </div>
+</div>
 
 <script>
    var marker_img = "{% static 'main/marker.png' %}"
