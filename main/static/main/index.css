@@ -516,7 +516,7 @@
         position:fixed;
         display:flex;
         height:10%;
-        font-size:0.7vw;
+        font-size:10px;
         color:gray;
         background-color: #d9d9d9;
         text-align:center;
@@ -661,7 +661,7 @@
         position:fixed;
         display:flex;
         height:12%;
-        font-size:0.7vw;
+        font-size:10px;
         color:gray;
         background-color: #d9d9d9;
         text-align:center;
